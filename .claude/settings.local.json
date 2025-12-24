@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(dir \"D:\\VScode\\GitHub\\LevelUpSpeckit-Plus\\Skill+SubAgents\" /s)",
+      "Bash(cmd /c \"dir \"\"D:\\VScode\\GitHub\\LevelUpSpeckit-Plus\\Skill+SubAgents\"\" /s\")"
+    ]
+  }
+}
