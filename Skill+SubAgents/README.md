@@ -3,7 +3,7 @@
 This is a collection of "modular brains" for Claude. Instead of giving Claude one giant, messy prompt, we use these **Skills** to give it specific "superpowers" only when it needs them.
 
 Think of a **Skill** as a specialized "Onboarding Guide" for a specific task.
-
+/plugin marketplace add anthropics/skills
 ---
 
 ## 📂 What’s in the Box?

@@ -57,6 +57,40 @@ python refresh_token.py
 If someone can’t run the Python script, this batch file is included only for manual inspection:
 [Manual script](Manual.bat)
 
+# Troubleshooting
+
+* **Doesn’t work first time**
+
+  * Run the script **twice**
+
+* **Still not working**
+
+  * Use the included **Manual.bat** script
+
+* **500 server error**
+
+  * This is a **Qwen / provider-side issue**
+  * Nothing to fix locally, just retry later
+
+---
+
+# Tip
+
+To make it faster:
+
+* Paste this file into your **project root**
+* Add it to **.gitignore**
+* Use **VSCode Code Runner** to run it in **1 click**
+
+---
+
+# Request
+
+If this helps you:
+
+* ⭐ **Star the repo**
+* Explore the repo — it has **more useful tools**
+
 # HERE ARE SOME MAIN CCR Shortcuts:
 
  ```! for bash mode       double tap esc to clear input      ctrl + _ to undo
