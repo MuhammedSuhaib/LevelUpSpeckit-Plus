@@ -10,11 +10,13 @@ PROVIDER_NAME = "qwen"
 try:
     # 1. Run Qwen just to refresh token
     print("Running Qwen to refresh token...")
+    last_updated = QWEN_CREDS_PATH.stat().st_mtime
     subprocess.Popen("qwen", shell=True)
-    for _ in range(10):
-        if QWEN_CREDS_PATH.exists():
+    for _ in range(3):
+        time.sleep(10)
+        current_updated = QWEN_CREDS_PATH.stat().st_mtime
+        if current_updated > last_updated:
             break
-        time.sleep(1)
     else:
         raise TimeoutError("Qwen did not refresh token in time")
 
