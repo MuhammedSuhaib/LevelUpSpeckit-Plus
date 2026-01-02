@@ -66,9 +66,6 @@ def read_todo(id: int, session: Session = Depends(get_session)):
 
 # ___________________________________________________________________________#
 '''
-Here is a **clean, final note** (short + structured):
-
----
 
 ### DB Session (SQLModel / SQLAlchemy)
 

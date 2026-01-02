@@ -8,24 +8,15 @@ CCR_CONFIG_PATH = USER_PROFILE / ".claude-code-router" / "config.json"
 PROVIDER_NAME = "qwen"
 
 try:
-    # 1. Run Qwen just to refresh token
-    print("Running Qwen to refresh token...")
-    last_updated = QWEN_CREDS_PATH.stat().st_mtime
-    subprocess.Popen("qwen", shell=True)
-    for _ in range(3):
-        time.sleep(10)
-        current_updated = QWEN_CREDS_PATH.stat().st_mtime
-        if current_updated > last_updated:
-            break
-    else:
-        raise TimeoutError("Qwen did not refresh token in time")
+    # 1. Run Qwen in non-interactive mode to refresh token
+    print("Running Qwen in non-interactive mode to refresh token...")
+    subprocess.run("qwen \"hi\"", shell=True)
+    # Wait a bit for the token to be refreshed
+    time.sleep(2)
+    if not QWEN_CREDS_PATH.exists():
+        raise FileNotFoundError("Qwen credentials file was not created after non-interactive run")
 
-
-    # force kill qwen
-    if os.name == "nt":  # Windows
-        subprocess.run("taskkill /F /IM qwen.exe /T", shell=True)
-    else:  # Linux / macOS
-        subprocess.run("pkill -f qwen", shell=True)
+    # No need to kill qwen since non-interactive mode should complete on its own
 
 
     # 2. Read the new token (ensure file exists)
