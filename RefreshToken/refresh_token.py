@@ -61,7 +61,7 @@ try:
     # 5. Open CCR in interactive mode
     print("Launching Claude Code...")
     subprocess.run("cls", shell=True)
-    subprocess.Popen("start cmd /k ccr code", shell=True)
+    subprocess.Popen("start cmd /k ccr code --continue", shell=True)
 
     print("Done.")
 
