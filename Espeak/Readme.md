@@ -94,6 +94,10 @@ Keep messages short.
 
 ---
 
+## Video
+[Video Demo](./Espeak.mp4)
+
+
 ## Summary
 
 Small script.

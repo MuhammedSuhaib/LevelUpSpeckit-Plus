@@ -83,6 +83,9 @@ To make it faster:
 * Use **VSCode Code Runner** to run it in **1 click**
 
 ---
+# Video 
+
+[Video Demo](https://www.youtube.com/watch?v=7HuhfrzKtqo)
 
 # Request
 
