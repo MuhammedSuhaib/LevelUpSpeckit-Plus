@@ -14,8 +14,9 @@ This tool exists so you can:
 - Convert the messy export into clean request/response turns.
 - Resume the same context in any other agent (Qwen, Gemini, Claude Code Router, ChatGPT, etc.).
 
-> **Real case**: Claude flagged an adult account as under-18 and banned it.  
-> The only recovery path was the data export + this script.
+> **Real case**: Claude flagged an adult account as under-18 and demanded selfie verification.  
+> Uploading a selfie to a company that already mishandled the age check was not an option.  
+> The only path taken was the data export + this script.
 
 **Do this regularly.** Don’t wait for the ban email.
 
