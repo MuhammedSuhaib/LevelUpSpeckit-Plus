@@ -4,7 +4,7 @@ Welcome to **LevelUpSpeckit-Plus**! This repository contains a collection of too
 
 ## Introduction
 
-This repository serves as a comprehensive toolkit for students working with AI agents in coding projects. It includes solutions for multi-agent coordination, audio notifications, token management, and specialized AI skills to enhance productivity during hackathons and development sprints. The tools are designed to work with Claude Code Router, Qwen, and other AI agents.
+This repository serves as a comprehensive toolkit for students working with AI agents in coding projects. It includes solutions for multi-agent coordination, audio notifications, token management, specialized AI skills, and **chat history recovery** to enhance productivity during hackathons and development sprints. The tools are designed to work with Claude Code Router, Qwen, and other AI agents.
 
 ## Table of Contents
 
@@ -21,6 +21,7 @@ This repository serves as a comprehensive toolkit for students working with AI a
     - [Audio Notifications](#audio-notifications)
     - [Token Refresh](#token-refresh)
     - [AI Skills & Sub-Agents](#ai-skills--sub-agents)
+    - [Chat Recovery](#chat-recovery)
   - [Advanced Usage](#advanced-usage)
 
 ## Directory Structure
@@ -32,6 +33,8 @@ LevelUpSpeckit-Plus/
 ├── LastClassCode/        # Example code from previous classes
 ├── RefreshToken/         # Token management for Claude Code Router
 ├── Skill+SubAgents/      # AI skills and sub-agent templates
+├── chat-recovery/        # Recover chat history from banned / exported accounts
+│   └── claude-ai/        # Claude.ai data-export recovery tool
 ├── .claude/              # Claude-specific configurations
 └── Hackathon II - Todo Spec-Driven Development.md # Main hackathon document
 ```
@@ -48,6 +51,8 @@ LevelUpSpeckit-Plus/
 
 4. **Explore SubAgents and Skills**: Review [Skill+SubAgents/README.md](./Skill+SubAgents/README.md) to understand how to use specialized AI capabilities.
 
+5. **Protect your chat history**: Run the Claude recovery tool in [chat-recovery/claude-ai/](./chat-recovery/claude-ai/) regularly — especially important if your Claude account gets banned.
+
 ### Using Specific Tools
 
 - **Multi-Agent Coordination**: Follow the 4-step process in [AgentCoordination/README.md](./AgentCoordination/README.md)
@@ -55,6 +60,7 @@ LevelUpSpeckit-Plus/
 - **Token Refresh**: Run [python refresh_token.py](./RefreshToken/refresh_token.py) or use with VSCode code runner
 - **Project Organization**: Copy [Skill+SubAgents/agents/ProjectOrganizer.md](./Skill+SubAgents/agents/ProjectOrganizer.md) content and use as a Claude prompt
 - **Skill Creation**: Use the skill creator in [Skill+SubAgents/skills/skill-creator/](./Skill+SubAgents/skills/skill-creator/) to generate new specialized skills
+- **Chat Recovery (Claude ban)**: See [chat-recovery/claude-ai/README.md](./chat-recovery/claude-ai/README.md)
 
 ---
 
@@ -100,6 +106,17 @@ Located in `Skill+SubAgents/`, this directory contains modular skills for Claude
 - **Next.js 16 Skills**: Comprehensive set of skills for Next.js 16 development with significant improvements in eval scores
 - **Modular Design**: 3-level design approach for maintainability
 
+### Chat Recovery
+Located in `chat-recovery/`, this directory contains tools to extract and clean chat history from AI platforms so you can resume conversations elsewhere.
+
+**Claude.ai** (`chat-recovery/claude-ai/`):
+- Critical when your Claude account is banned or restricted (false age flags, policy errors, etc.)
+- The only recovery path after a ban is the one-time data export
+- Converts the messy `conversations.json` into clean per-chat JSON files
+- Lets you continue the same context in Qwen, Gemini, CCR, or any other agent
+
+→ Full instructions: [chat-recovery/claude-ai/README.md](./chat-recovery/claude-ai/README.md)
+
 ### All Available Skills
 Located in `Skill+SubAgents/skills/`, this repository contains a comprehensive collection of specialized skills for Claude. Each skill provides specific "superpowers" for different domains and technologies.
 
@@ -141,5 +158,6 @@ For advanced users, the repository supports:
 - Integration with Claude Code Router for seamless AI agent usage
 - Audio feedback systems for improved productivity
 - Automated token management to prevent service interruptions
+- Chat history recovery so banned accounts don’t mean lost work
 
 **Important**: Each subdirectory contains its own README file with detailed instructions. Please read the specific README files in each directory for complete setup and usage information.

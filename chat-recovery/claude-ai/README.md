@@ -2,6 +2,23 @@
 
 Recover and clean conversation history exported from [Claude.ai](https://claude.ai).
 
+## Why this is critical
+
+Claude accounts can be banned or restricted at any time (false age flags, policy mistakes, etc.).  
+When that happens the **only** thing you can still do is download your data once.  
+After that the chats are gone forever unless you already extracted them.
+
+This tool exists so you can:
+
+- Rescue every usable conversation **before** or **immediately after** a ban.
+- Convert the messy export into clean request/response turns.
+- Resume the same context in any other agent (Qwen, Gemini, Claude Code Router, ChatGPT, etc.).
+
+> **Real case**: Claude flagged an adult account as under-18 and banned it.  
+> The only recovery path was the data export + this script.
+
+**Do this regularly.** Don’t wait for the ban email.
+
 ## Overview
 
 Claude data exports arrive as a ZIP. After extraction you get account metadata plus a single large `conversations.json` file that holds every chat as an array of objects. Many of those objects are empty (deleted chats, aborted sessions, etc.). This tool filters out empty conversations and produces clean, readable per-chat JSON files that can be resumed in other agents or tools.
