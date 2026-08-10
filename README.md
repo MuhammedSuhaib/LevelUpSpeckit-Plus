@@ -34,7 +34,9 @@ LevelUpSpeckit-Plus/
 ├── RefreshToken/         # Token management for Claude Code Router
 ├── Skill+SubAgents/      # AI skills and sub-agent templates
 ├── chat-recovery/        # Recover chat history from banned / exported accounts
-│   └── claude-ai/        # Claude.ai data-export recovery tool
+│   ├── claude-ai/        # Claude.ai data-export recovery tool
+│   ├── gemini/           # Gemini CLI JSONL extractor
+│   └── qwen/             # Qwen Code JSONL extractor
 ├── .claude/              # Claude-specific configurations
 └── Hackathon II - Todo Spec-Driven Development.md # Main hackathon document
 ```
@@ -51,7 +53,7 @@ LevelUpSpeckit-Plus/
 
 4. **Explore SubAgents and Skills**: Review [Skill+SubAgents/README.md](./Skill+SubAgents/README.md) to understand how to use specialized AI capabilities.
 
-5. **Protect your chat history**: Run the Claude recovery tool in [chat-recovery/claude-ai/](./chat-recovery/claude-ai/) regularly — especially important if your Claude account gets banned.
+5. **Protect your chat history**: Run the recovery tools in [chat-recovery/](./chat-recovery/) regularly — especially important if an account gets banned.
 
 ### Using Specific Tools
 
@@ -60,7 +62,9 @@ LevelUpSpeckit-Plus/
 - **Token Refresh**: Run [python refresh_token.py](./RefreshToken/refresh_token.py) or use with VSCode code runner
 - **Project Organization**: Copy [Skill+SubAgents/agents/ProjectOrganizer.md](./Skill+SubAgents/agents/ProjectOrganizer.md) content and use as a Claude prompt
 - **Skill Creation**: Use the skill creator in [Skill+SubAgents/skills/skill-creator/](./Skill+SubAgents/skills/skill-creator/) to generate new specialized skills
-- **Chat Recovery (Claude ban)**: See [chat-recovery/claude-ai/README.md](./chat-recovery/claude-ai/README.md)
+- **Chat Recovery (Claude)**: See [chat-recovery/claude-ai/README.md](./chat-recovery/claude-ai/README.md)
+- **Chat Recovery (Gemini)**: See [chat-recovery/gemini/README.md](./chat-recovery/gemini/README.md)
+- **Chat Recovery (Qwen)**: See [chat-recovery/qwen/README.md](./chat-recovery/qwen/README.md)
 
 ---
 
@@ -116,6 +120,17 @@ Located in `chat-recovery/`, this directory contains tools to extract and clean 
 - Lets you continue the same context in Qwen, Gemini, CCR, or any other agent
 
 → Full instructions: [chat-recovery/claude-ai/README.md](./chat-recovery/claude-ai/README.md)
+
+**Gemini CLI** (`chat-recovery/gemini/`):
+- Extracts USER / ASSISTANT turns from Gemini CLI JSONL logs into clean `.md` files
+
+→ Full instructions: [chat-recovery/gemini/README.md](./chat-recovery/gemini/README.md)
+
+**Qwen Code** (`chat-recovery/qwen/`):
+- Extracts USER / ASSISTANT turns from Qwen Code JSONL logs (file, wildcard, or directory) into `.txt` files
+- Filters out thought blocks
+
+→ Full instructions: [chat-recovery/qwen/README.md](./chat-recovery/qwen/README.md)
 
 ### All Available Skills
 Located in `Skill+SubAgents/skills/`, this repository contains a comprehensive collection of specialized skills for Claude. Each skill provides specific "superpowers" for different domains and technologies.
