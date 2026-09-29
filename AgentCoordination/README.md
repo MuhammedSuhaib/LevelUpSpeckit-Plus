@@ -98,6 +98,35 @@ This creates a **bridge** between agents and preserves context.
 
 ---
 
+## Tip: Claude Code Worktree Isolation (Parallel Agents)
+
+Claude Code can isolate sessions and subagents so parallel work never collides.
+
+### 1. Isolated session
+```bash
+claude --worktree feature-name
+```
+Creates a fresh checkout under `.claude/worktrees/` on its own branch.
+
+### 2. Subagent isolation
+Add this to any agent frontmatter (e.g. in `.claude/agents/`):
+```yaml
+---
+name: my-agent
+description: ...
+isolation: worktree
+---
+```
+Each subagent gets a temporary worktree that auto-cleans when finished (no changes) or stays until reviewed.
+
+### 3. Quick ask
+Just tell Claude:
+> Use worktrees for your agents
+
+Docs: https://code.claude.com/docs/en/worktrees
+
+---
+
 ## Summary
 
 * SpecKit-Plus allows **one agent at init**
@@ -109,5 +138,6 @@ This creates a **bridge** between agents and preserves context.
 * Onboard the agent properly
 * Maintain phase / ADR sequence
 * Use AIChat for coordination
+* For Claude Code: use `--worktree` or `isolation: worktree` so parallel runs never collide
 
 ---
